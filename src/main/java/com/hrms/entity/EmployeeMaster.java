@@ -68,4 +68,17 @@ public class EmployeeMaster {
 	public void setUpdated_on(Date updated_on) {
 		this.updated_on = updated_on;
 	}
+
+	@Override
+	public String toString() {
+		return "EmployeeMaster{" +
+				"id=" + id +
+				", role='" + role + '\'' +
+				", active=" + active +
+				", type='" + type + '\'' +
+				", password='" + password + '\'' +
+				", created_on=" + created_on +
+				", updated_on=" + updated_on +
+				'}';
+	}
 }

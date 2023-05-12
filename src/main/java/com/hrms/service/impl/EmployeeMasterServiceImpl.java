@@ -38,13 +38,15 @@ public class EmployeeMasterServiceImpl implements EmployeeMasterService {
 
 	@Override
 	@Transactional(rollbackFor = Exception.class)
-	public EmployeeMaster saveEmployeeMaster(Date currentDate,EmployeeMasterDto req) {
+	public EmployeeMaster saveEmployeeMaster(EmployeeMasterDto req) {
+		Date todayDate = new Date();
 		EmployeeMaster eM = new EmployeeMaster();
 		eM.setActive(req.getActive());
 		eM.setRole(req.getRole());
 		eM.setType(req.getType());
-		eM.setCreated_on(currentDate);
-		eM.setUpdated_on(currentDate);
+		eM.setCreated_on(todayDate);
+		eM.setUpdated_on(todayDate);
+		eM.setPassword(req.getPassword());
 		return this.eRepo.save(eM);
 	}
 

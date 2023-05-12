@@ -1,5 +1,6 @@
 package com.hrms.controller;
 
+import com.hrms.dto.EmployeeMasterDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hrms.dto.LoginDto;
 import com.hrms.entity.EmployeeMaster;
 import com.hrms.service.EmployeeMasterService;
+
+import java.util.Date;
+import java.util.List;
 
 
 @RestController
@@ -61,11 +65,24 @@ public class LoginController {
 //		return response;
 //	}
 	
-	@GetMapping("/login")
-	public String login(@RequestParam Integer id) {
-
+	@GetMapping("/employee")
+	public String employee(@RequestParam Integer id) {
 	EmployeeMaster employeeMasterEntity = eser.getEmployee(id);
 	
 	return employeeMasterEntity.toString();
 	}
+
+	@GetMapping("/employees")
+	public String employees() {
+		List<EmployeeMaster> employeeMasterEntity = eser.getAllEmployee();
+		return employeeMasterEntity.toString();
+	}
+
+	@PostMapping("/employee")
+	public String employee(@RequestBody EmployeeMasterDto dto) {
+		EmployeeMaster employeeMasterEntity = eser.saveEmployeeMaster(dto);
+
+		return employeeMasterEntity.toString();
+	}
+
 }

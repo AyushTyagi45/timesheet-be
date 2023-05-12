@@ -13,7 +13,7 @@ public interface EmployeeMasterService {
 
 	public List<EmployeeMaster> getEmployeeByList(String idListSepByComma);
 
-	public EmployeeMaster saveEmployeeMaster(Date currentDate, EmployeeMasterDto employeeMasterDto);
+	public EmployeeMaster saveEmployeeMaster(EmployeeMasterDto employeeMasterDto);
 
 	public List<EmployeeMaster> getAllEmployee();
 
