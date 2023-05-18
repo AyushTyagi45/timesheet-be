@@ -20,7 +20,7 @@ public class EmployeeMaster {
 	private char active;
 	private String type;
 	private String password;
-	private String email;
+	private String email_id;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created_on;
@@ -57,11 +57,11 @@ public class EmployeeMaster {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEmail(String email){
-		return email;
+	public String getEmail_id(String email_id){
+		return email_id;
 	}
-	public void setEmail(String email){
-		this.email = email;
+	public void setEmail_id(String email_id){
+		this.email_id = email_id;
 	}
 	public Date getCreated_on() {
 		return created_on;
@@ -84,7 +84,7 @@ public class EmployeeMaster {
 				", active=" + active +
 				", type='" + type + '\'' +
 				", password='" + password + '\'' +
-				", email='" + email + '\'' +
+				", email_id='" + email_id + '\'' +
 				", created_on=" + created_on +
 				", updated_on=" + updated_on +
 				'}';
