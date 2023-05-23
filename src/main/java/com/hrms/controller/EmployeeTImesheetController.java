@@ -24,33 +24,33 @@ public class EmployeeTImesheetController {
 	@Autowired
 	EmployeeTimesheetRepository emprepo;
 
-	@GetMapping("/get_employee")
+	@GetMapping("/employeeTimesheet")
 	public String employee(@RequestParam Integer id) {
 		EmployeeTimesheet employeeTimesheet = empService.getEmployee(id);
 
 		return employeeTimesheet.toString();
 	}
 
-	@GetMapping("/get_employees")
+	@GetMapping("/employeesTimesheet")
 	public String employees() {
 		List<EmployeeTimesheet> employee_EmployeeTimesheets = empService.getAllEmployee();
 		return employee_EmployeeTimesheets.toString();
 	}
 
-	@PostMapping("/save_employee")
+	@PostMapping("/employeeTimesheet")
 	public EmployeeTimesheet save(@RequestBody EmployeeTimesheet employeeTimesheet) {
 
 		return this.empService.saveEmployeeTimesheet(employeeTimesheet);
 	}
 
-	@DeleteMapping("/delete_employee/{Id}")
+	@DeleteMapping("/employeeTimesheet")
 	public void deleteEmployee(@PathVariable String Id) {
 
 		this.empService.empdeleteByid(Integer.parseInt(Id));
 	}
 
 
-	@PutMapping("/update_employee/{Id}")
+	@PutMapping("/employeeTimesheet")
 	public EmployeeTimesheet updateEmployeeTimesheet(@PathVariable("Id") int Id,
 		@RequestBody EmployeeTimesheet employeeTimesheet) {
 		empService.updateEmployeeTimesheet(Id, employeeTimesheet);
