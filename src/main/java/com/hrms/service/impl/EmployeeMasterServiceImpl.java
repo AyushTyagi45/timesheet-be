@@ -3,7 +3,6 @@ package com.hrms.service.impl;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -61,13 +60,16 @@ public class EmployeeMasterServiceImpl implements EmployeeMasterService {
 	}
 
 	@Override
-	public EmployeeMaster updateEmp(Date currentDate,Integer id,EmployeeMasterDto employeeMaster) {
-		//Integer	empID=employeeMaster.getId();
-	    EmployeeMaster empDetail=eRepo.findById(id).get();
-	    empDetail.setRole(employeeMaster.getRole());
-	    empDetail.setActive(employeeMaster.getActive());
-	    return eRepo.save(empDetail);
+	public void updateEmployeeMaster(EmployeeMaster employeeMaster1) {
+	EmployeeMaster employeeMasterFromDb = eRepo.findById(employeeMaster1.getId()).get();
+    employeeMasterFromDb.setId(employeeMaster1.getId());
+	employeeMasterFromDb.setRole(employeeMaster1.getRole());
+	employeeMasterFromDb.setActive(employeeMaster1.getActive());
+    employeeMasterFromDb.setPassword(employeeMaster1.getPassword());
+	employeeMasterFromDb.setEmail_id(employeeMaster1.getEmail_id());
+	employeeMasterFromDb.setFirst_Name(employeeMaster1.getFirst_Name());
+	employeeMasterFromDb.setLast_Name(employeeMaster1.getLast_Name());
+	eRepo.save(employeeMaster1);
 
 	}
-
 }

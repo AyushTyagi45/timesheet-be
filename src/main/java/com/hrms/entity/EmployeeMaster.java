@@ -21,6 +21,8 @@ public class EmployeeMaster {
 	private String type;
 	private String password;
 	private String email_id;
+	private String First_Name;
+	private String Last_Name;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created_on;
@@ -57,11 +59,23 @@ public class EmployeeMaster {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEmail_id(String email_id){
+	public String getEmail_id() {
 		return email_id;
 	}
-	public void setEmail_id(String email_id){
+	public void setEmail_id(String email_id) {
 		this.email_id = email_id;
+	}
+	public String getFirst_Name() {
+		return First_Name;
+	}
+	public void setFirst_Name(String first_Name) {
+		this.First_Name = first_Name;
+	}
+	public String getLast_Name() {
+		return Last_Name;
+	}
+	public void setLast_Name(String last_Name) {
+		this.Last_Name = last_Name;
 	}
 	public Date getCreated_on() {
 		return created_on;
@@ -78,15 +92,8 @@ public class EmployeeMaster {
 
 	@Override
 	public String toString() {
-		return "EmployeeMaster{" +
-				"id=" + id +
-				", role='" + role + '\'' +
-				", active=" + active +
-				", type='" + type + '\'' +
-				", password='" + password + '\'' +
-				", email_id='" + email_id + '\'' +
-				", created_on=" + created_on +
-				", updated_on=" + updated_on +
-				'}';
+		return "EmployeeMaster [id=" + id + ", role=" + role + ", active=" + active + ", type=" + type + ", password="
+				+ password + ", email_id=" + email_id + ", First_Name=" + First_Name + ", Last_Name=" + Last_Name
+				+ ", created_on=" + created_on + ", updated_on=" + updated_on + "]";
 	}
 }

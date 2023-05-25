@@ -1,6 +1,5 @@
 package com.hrms.service;
 
-import java.util.Date;
 import java.util.List;
 
 import com.hrms.dto.EmployeeMasterDto;
@@ -19,5 +18,7 @@ public interface EmployeeMasterService {
 
 	public void EmployeedeleteById(Integer id);
 
-	public EmployeeMaster updateEmp(Date currentDate,Integer id,EmployeeMasterDto employeeMaster);
+	public void updateEmployeeMaster(EmployeeMaster employeeMaster);
+
+	
 }

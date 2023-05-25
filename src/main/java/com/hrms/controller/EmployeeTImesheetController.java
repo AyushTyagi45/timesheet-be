@@ -51,9 +51,9 @@ public class EmployeeTImesheetController {
 
 
 	@PutMapping("/employeeTimesheet")
-	public EmployeeTimesheet updateEmployeeTimesheet(@PathVariable("Id") int Id,
-		@RequestBody EmployeeTimesheet employeeTimesheet) {
-		empService.updateEmployeeTimesheet(Id, employeeTimesheet);
-		return employeeTimesheet; 
+	public EmployeeTimesheet updateEmployeeTimesheet(
+	@RequestBody EmployeeTimesheet employeeTimesheet) {
+	empService.updateEmployeeTimesheet(employeeTimesheet);
+	return employeeTimesheet; 
 	}
 }

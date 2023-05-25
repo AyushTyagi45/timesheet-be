@@ -12,9 +12,6 @@ import com.hrms.service.EmployeeTimesheetService;
 @Service
 public class EmployeeTimesheetServiceImpl implements EmployeeTimesheetService{
 	
-	//List<EmployeeTimesheet> list;
-	
- 
 	@Autowired
 	EmployeeTimesheetRepository empRepository ;
 		
@@ -50,8 +47,8 @@ public class EmployeeTimesheetServiceImpl implements EmployeeTimesheetService{
 	}
 	
 	@Override
-	public void updateEmployeeTimesheet(int id, EmployeeTimesheet employeeTimesheet) {
-		EmployeeTimesheet employeeTimesheetFromDb = empRepository.findById(id).get();
+	public void updateEmployeeTimesheet(EmployeeTimesheet employeeTimesheet) {
+		EmployeeTimesheet employeeTimesheetFromDb = empRepository.findById(employeeTimesheet.getEmp_id()).get();
 		System.out.println(employeeTimesheetFromDb.toString());
 	    employeeTimesheetFromDb.setEmp_id(employeeTimesheet.getEmp_id());
 		employeeTimesheetFromDb.setEmail_id(employeeTimesheet.getEmail_id());

@@ -15,6 +15,6 @@ public interface EmployeeTimesheetService {
 
 	void empdeleteByid(int id);
 
-	void updateEmployeeTimesheet(int employeeTimesheetId, EmployeeTimesheet employeeTimesheet);
+	void updateEmployeeTimesheet(EmployeeTimesheet employeeTimesheet);
 
 }

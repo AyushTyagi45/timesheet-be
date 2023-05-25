@@ -65,20 +65,20 @@ public class LoginController {
 //		return response;
 //	}
 	
-	@GetMapping("/employee")
+	@GetMapping("/get_employee")
 	public String employee(@RequestParam Integer id) {
 	EmployeeMaster employeeMasterEntity = eser.getEmployee(id);
 	
 	return employeeMasterEntity.toString();
 	}
 
-	@GetMapping("/employees")
+	@GetMapping("/get_employees")
 	public String employees() {
 		List<EmployeeMaster> employeeMasterEntity = eser.getAllEmployee();
 		return employeeMasterEntity.toString();
 	}
 
-	@PostMapping("/employee")
+	@PostMapping("/save_employee")
 	public String employee(@RequestBody EmployeeMasterDto dto) {
 		EmployeeMaster employeeMasterEntity = eser.saveEmployeeMaster(dto);
 
