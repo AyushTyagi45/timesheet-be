@@ -39,15 +39,25 @@ public class EmployeeMasterServiceImpl implements EmployeeMasterService {
 	@Transactional(rollbackFor = Exception.class)
 	public EmployeeMaster saveEmployeeMaster(EmployeeMasterDto req) {
 		Date todayDate = new Date();
-		EmployeeMaster eM = new EmployeeMaster();
-		eM.setActive(req.getActive());
-		eM.setRole(req.getRole());
-		eM.setType(req.getType());
-		eM.setCreated_on(todayDate);
-		eM.setUpdated_on(todayDate);
-		eM.setPassword(req.getPassword());
-		return this.eRepo.save(eM);
-	}
+		EmployeeMaster emp1 = new EmployeeMaster();
+		if (req.getEmail_id() != null && req.getFirst_Name() != null && req.getLast_Name() != null) {
+			//EmployeeMaster eM = new EmployeeMaster();
+			emp1.setActive(req.getActive());
+			emp1.setRole(req.getRole());
+			emp1.setType(req.getType());
+			emp1.setCreated_on(todayDate);
+			emp1.setUpdated_on(todayDate);
+			emp1.setPassword(req.getPassword());
+			emp1.setEmail_id(req.getEmail_id());
+			emp1.setFirst_Name(req.getFirst_Name());
+			emp1.setLast_Name(req.getLast_Name());
+			return this.eRepo.save(emp1);
+			
+		}
+		else {
+			return null;
+		}
+		}
 
 	@Override
 	public List<EmployeeMaster> getAllEmployee() {

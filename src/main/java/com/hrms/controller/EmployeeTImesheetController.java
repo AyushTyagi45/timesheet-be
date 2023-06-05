@@ -1,5 +1,6 @@
 package com.hrms.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class EmployeeTImesheetController {
 
 	@PostMapping("/employeeTimesheet")
 	public EmployeeTimesheet save(@RequestBody EmployeeTimesheet employeeTimesheet) {
-
+		employeeTimesheet.setCreated_on(new Date());
 		return this.empService.saveEmployeeTimesheet(employeeTimesheet);
 	}
 
@@ -50,10 +51,10 @@ public class EmployeeTImesheetController {
 	}
 
 
-	@PutMapping("/employeeTimesheet")
-	public EmployeeTimesheet updateEmployeeTimesheet(
-	@RequestBody EmployeeTimesheet employeeTimesheet) {
-	empService.updateEmployeeTimesheet(employeeTimesheet);
-	return employeeTimesheet; 
-	}
+//	@PutMapping("/employeeTimesheet")
+//	public EmployeeTimesheet updateEmployeeTimesheet(
+//	@RequestBody EmployeeTimesheet employeeTimesheet) {
+//	empService.updateEmployeeTimesheet(employeeTimesheet);
+//	return employeeTimesheet; 
+//	}
 }

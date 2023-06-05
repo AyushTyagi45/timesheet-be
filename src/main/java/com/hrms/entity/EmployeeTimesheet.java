@@ -18,10 +18,13 @@ public class EmployeeTimesheet {
 	private Integer emp_id;
 	private String email_id;
 	private String employee_name;
+	private Date Day_Date;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created_on;
 	private String description;
+	
+	
 	public Integer getEmp_id() {
 		return emp_id;
 	}
@@ -40,6 +43,12 @@ public class EmployeeTimesheet {
 	public void setEmployee_name(String employee_name) {
 		this.employee_name = employee_name;
 	}
+	public Date getDay_Date() {
+		return Day_Date;
+	}
+	public void setDay_Date(Date day_Date) {
+		Day_Date = day_Date;
+	}
 	public Date getCreated_on() {
 		return created_on;
 	}
@@ -56,9 +65,7 @@ public class EmployeeTimesheet {
 	@Override
 	public String toString() {
 		return "EmployeeTimesheet [emp_id=" + emp_id + ", email_id=" + email_id + ", employee_name=" + employee_name
-				+ ", created_on=" + created_on + ", description=" + description + "]";
+				+ ", Day_Date=" + Day_Date + ", created_on=" + created_on + ", description=" + description + "]";
 	}
-	
-	
 	
 }

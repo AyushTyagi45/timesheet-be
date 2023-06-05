@@ -55,6 +55,7 @@ public class EmployeeTimesheetServiceImpl implements EmployeeTimesheetService{
 		employeeTimesheetFromDb.setEmployee_name(employeeTimesheet.getEmployee_name());
 		employeeTimesheetFromDb.setDescription(employeeTimesheet.getDescription());
 		employeeTimesheetFromDb.setCreated_on(employeeTimesheet.getCreated_on());
+		employeeTimesheetFromDb.setDay_Date(employeeTimesheet.getDay_Date());
 		empRepository.save(employeeTimesheetFromDb);
 	}
 
